@@ -17,8 +17,8 @@ removal, FFT, channel equalisation, training removal, demapping.
 
 **Frame synchronisation** — the received signal passes an RRC matched filter, then a sliding
 window correlates it against the locally generated LFSR preamble. The correlation is
-normalised by the window energy, `T = |c|²/E`, so the detection threshold does not depend on
-received level, and the frame start is taken at the peak.
+normalised by the window energy, `T = |c|^2/E`, so the detection threshold does not depend
+on received level, and the frame start is taken at the peak.
 
 ## Channel estimation
 
@@ -38,7 +38,7 @@ against 0.1555 for block plus Viterbi.
 
 ## Results
 
-Sensitivity: BER stays under 1% down to **SNR = 0 dB**, and breaks above it at −1 dB.
+Sensitivity: BER stays under 1% down to **SNR = 0 dB**, and breaks above it at -1 dB.
 
 Throughput against cyclic-prefix length, at 16 kHz bandwidth:
 
@@ -64,13 +64,9 @@ and the transmission ran at **0% BER**.
 `diversity_trans.m` for the two-microphone version, `audiotrans_throughput.m` for the
 bandwidth and CP sweeps.
 
----
-
-EPFL Wireless Receivers, two-person project with Matteo Barberis. Files marked "(Given)"
-below were provided by the course.
-
 ## Files
 
+```
 audiotrans.m                 - Main script for standard OFDM audio transmission and channel simulation.
 audiotrans_throughput.m      - Main script testing the maximum throughput and BER across different bandwidth and CP.
 channel_emulator.p           - Given file for the emulation of the channel.
@@ -96,3 +92,9 @@ rxofdm.m                     - Standard receiver function performing sync, FFT, 
 rxofdm_diversity.m           - Diversity receiver function combining signals from two sources using MRC.
 training_generate.m          - Generates the pseudo-random sequence used for pilot symbols.
 txofdm.m                     - Standard transmitter function generating the full OFDM signal structure.
+```
+
+---
+
+EPFL Wireless Receivers, two-person project with Matteo Barberis. Files marked "(Given)"
+above were provided by the course.
